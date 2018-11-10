@@ -1,56 +1,42 @@
-# PyPoll
-# main.py
 
-#
-# ------------------------------------------
-#  Require Dependencies
-# ------------------------------------------
-# Modules
+# Import dependencies
 import os
 import csv  
 
-# ------------------------------------------
-#  Input File
-# ------------------------------------------
-# Set path for input file
+
+# Input file
 csv_path = os.path.join("election_data.csv")
 
-# ------------------------------------------
-#  Output File
-# ------------------------------------------
-# Set path for output file
+
+# Output file
 txt_output = os.path.join("election_analysis.txt") 
 
-# ------------------------------------------
-# Main
-# ------------------------------------------
-
-# Initiate variable for total number of voters
+# Counter for number of voters
 total_votes = 0
 
-# Initiate list of candidates who received votes
+# List of candidates who received votes
 candidates_list = []
 
-# Initiate dictionary of candidates with number and percentage of votes as list
+# Dictionary of candidates, number and percentage of votes as list
 candidates_dict = {}
 
-# Initiate variable for highest number of votes of elected candidate
+# Variable for highest number of votes of elected candidate
 highest_votes = 0
 
-# Initiate elected candidate variable
+# Variable for elected candidate
 candidate_winner = ""
 
-# Read the csv file and converts it into lists
+# Read the csv file and convert it into list
 with open(csv_path) as election_data:
     csv_reader = csv.reader(election_data)
 
-    # Skip first row
+    # Skipping first row
     next(csv_reader) 
 
-    # Read each row of the csv_reader file in a loop
+    # Reading each row of the csv_reader file
     for row in csv_reader:
 
-        # Count the total of votes from the election
+        # Counting the total number of votes 
         total_votes = total_votes + 1
 
         # Record name of each candidate that collected at least one vote
@@ -100,7 +86,7 @@ with open(txt_output, "w") as txt_file:
         print(voter_output, end="")
 
         # Save each candidate's voter count and percentage to text file
-        #txt_file.write(voter_output)
+        txt_file.write(voter_output)
 
     # Print the winning candidate (to terminal)
     election_results = (
@@ -110,4 +96,4 @@ with open(txt_output, "w") as txt_file:
     print(election_results)
 
     # Save the final vote count to the text file
-    #txt_file.write(election_results)
+    txt_file.write(election_results)

@@ -39,6 +39,9 @@ print("Greatest Increase in Revenue:", max_revChange_date,"($", max_revChange,")
 print("Greatest Decrease in Revenue:", min_revChange_date,"($", min_revChange,")")
 
 #Ignore the commented out block below.
+
+#--------------------------------
+#--------------------------------
 #output = (
     #("\nFinancial Analysis\n")
     #("-----------------------------------\n")
@@ -54,6 +57,8 @@ print("Greatest Decrease in Revenue:", min_revChange_date,"($", min_revChange,")
     # Export the results to text file
     #with open(txt_output, "w") as txt_file:
         #txt_file.write(output)      --- Will get back to this later.
+#------------------------------------------
+#------------------------------------------
 
 
 # Writing to output file
